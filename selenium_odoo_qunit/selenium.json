@@ -12,16 +12,12 @@
         {
           "browserName": "firefox",
           "platform": "LINUX",
-          "version": "",
-          "capabilities": {
-          }
+          "version": ""
         },
         {
           "browserName": "chrome",
           "platform": "LINUX",
-          "version": "",
-          "capabilities": {
-          }
+          "version": ""
         }
       ]
     }
