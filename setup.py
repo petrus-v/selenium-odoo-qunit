@@ -2,6 +2,7 @@ from setuptools import setup
 
 setup(
     name='selenium-odoo-qunit',
+    version='0.0.1',
     description='Odoo Qunit launcher',
     long_description=open('README.rst').read(),
     author='Pierre Verkest',
