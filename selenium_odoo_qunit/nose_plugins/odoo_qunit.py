@@ -36,7 +36,7 @@ class OdooQunit(Plugin):
         self.odoo_version = options.odoo_qunit_odoo_version
         OdooQunitTestCase._url = self.url
         OdooQunitTestCase._modules = self.modules
-        OdooQunitTestCase._odoo_version = self.odoo_version
+        OdooQunitTestCase._odoo_version = float(self.odoo_version)
 
 
 class OdooQunitTestCase(SeleniumTestCase):
