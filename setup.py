@@ -10,7 +10,8 @@ setup(
     url='https://github.com/petrus-v/selenium-odoo-qunit',
     packages=[
         'selenium_odoo_qunit',
-        'selenium_odoo_qunit.nose_plugins'
+        'selenium_odoo_qunit.nose_plugins',
+        'selenium_odoo_qunit.odoo_qunit_tests'
     ],
     install_requires=[
         'anybox_nose_selenium',
