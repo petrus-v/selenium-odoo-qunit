@@ -12,16 +12,10 @@ class TestOdooQunit(OdooQunitTestCase):
         super(TestOdooQunit, self).setUp()
         log.info(self.selenium.capabilities)
         self.sel = self.selenium
-        # self.base_url = "http://122491-9-0-f0527d.runbot9.odoo.com"
-        # self.base_url = "http://122206-7-0-8a7394.runbot8.odoo.com"
-        # self.base_url = "http://122360-8-0-fixes-mat-6efc37.runbot.odoo.com"
         self.base_url = self._url
         self.sel.implicitly_wait(60)
         self.modules = self._modules
         self.odoo_version = self._odoo_version
-        # http://122491-9-0-f0527d.runbot9.odoo.com/web/tests?notrycatch&noglobals&module=eval.basics&filter=basics&hidepassed
-        # http://122360-8-0-fixes-mat-6efc37.runbot.odoo.com/web/tests?module=editor&noglobals=true&notrycatch=true&filter=state
-        # http://122206-7-0-8a7394.runbot8.odoo.com/web/tests?mod=*&noglobals=true&notrycatch=true&filter=json
 
     def get_login_url(self):
         odoo = urlparse(self.base_url)

@@ -11,18 +11,49 @@ selenium.
     is only to run Qunit tests page.
 
 
+It's probably easier to set a config file
 
+.. code-block::
 
+    [nosetests]
+    with-selenium = 1
+    with-odoo-qunit = 1
+    selenium-config = selenium.json
+    processes = 4
+    process-timeout = 120
+
+with it's selenium config file
+
+.. code-block::
+
+    {
+  "drivers": [
+        {
+          "class": "selenium_extra.drivers.local.Firefox"
+        },
+        {
+          "class": "selenium_extra.drivers.remote.Grid",
+          "command_executor": "http://127.0.0.1:4444/wd/hub",
+          "capabilities": {
+          },
+          "request_drivers": [
+            {
+              "browserName": "firefox",
+              "platform": "LINUX",
+              "version": ""
+            },
+            {
+              "browserName": "chrome",
+              "platform": "LINUX",
+              "version": ""
+            }
+          ]
+        }
+      ]
+    }
 
 TODO
 ====
-
-knonw issues
-============
-
-* As this app start to change the working directory I guess relative path won't
-  works as expected
-
 
 Contribute
 ==========
