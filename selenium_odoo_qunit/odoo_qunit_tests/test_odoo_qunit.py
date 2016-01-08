@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 class TestOdooQunit(OdooQunitTestCase):
     def setUp(self):
         super(TestOdooQunit, self).setUp()
-        log.info(self.selenium.capabilities)
+        log.debug(self.selenium.capabilities)
         self.sel = self.selenium
         self.base_url = self._url
         self.sel.implicitly_wait(60)
@@ -48,8 +48,11 @@ class TestOdooQunit(OdooQunitTestCase):
             WebDriverWait(self.sel, 60).until(end_qunit_tests)
             title = sel.title
             elt = sel.find_element_by_id('qunit-testresult')
-            log.info("%s - Module %s", title, module)
-            log.info(elt.text)
+            log.info("%s %s(%s) - %s - Module %s - %s",
+                     sel.capabilities.get('platform', ''),
+                     sel.capabilities.get('browserName', ''),
+                     sel.capabilities.get('version', ''),
+                     title, module, elt.text)
             message = elt.text + '\n'
             passed = title.startswith(u'✔ ')
             if not passed:
