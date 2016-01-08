@@ -48,7 +48,7 @@ class TestOdooQunit(OdooQunitTestCase):
             WebDriverWait(self.sel, 60).until(end_qunit_tests)
             title = sel.title
             elt = sel.find_element_by_id('qunit-testresult')
-            log.info(title)
+            log.info("%s - Module %s", title, module)
             log.info(elt.text)
             message = elt.text + '\n'
             passed = title.startswith(u'✔ ')
